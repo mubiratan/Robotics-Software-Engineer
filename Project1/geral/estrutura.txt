@@ -1,0 +1,31 @@
+ .Project1                          # Build My World Project 
+    ├── model                          # Model files 
+    │   ├── Building
+    │   │   ├── model.config
+    │   │   ├── model.sdf
+    │   ├── HumanoidRobot
+    │   │   ├── model.config
+    │   │   ├── model.sdf
+    ├── script                         # Gazebo World plugin C++ script      
+    │   ├── welcome_message.cpp
+    ├── world                          # Gazebo main World containing models 
+    │   ├── UdacityOffice.world
+    ├── CMakeLists.txt                 # Link libraries 
+    └──                              
+    
+export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:/home/marcio/workspace/Project1/build
+    
+Project Aspects
+Inside the Gazebo world you can identify:
+
+- Udacity Office: A building model designed on the Building Editor tool of Gazebo. The structure contains features, and colors.
+- Green humanoid robot: Two instances of a model designed on the Model Editor tool of Gazebo.
+- Tables: A model imported from the Gazebo online library.
+- Terminal: A welcome message generated from a world plugin and printed to the terminal.
+
+
+killall gzserver
+killall gzclient
+
+
+

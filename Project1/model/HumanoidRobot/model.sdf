@@ -1,0 +1,551 @@
+<?xml version='1.0'?>
+<sdf version='1.7'>
+  <model name='HumanoidRobot'>
+    <link name='/r2/robot_world'>
+      <pose>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0.625017 0 -0 0</pose>
+        <mass>56.01</mass>
+        <inertia>
+          <ixx>14.6261</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>14.6252</iyy>
+          <iyz>0</iyz>
+          <izz>12.001</izz>
+        </inertia>
+      </inertial>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+      <gravity>1</gravity>
+      <visual name='/r2/robot_world_visual_/r2/stanchion'>
+        <pose>0 0 0.7 0 0 -1.57319</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robonaut/meshes/Stanchion.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <shader type='pixel'>
+            <normal_map>__default__</normal_map>
+          </shader>
+          <script>
+            <name>ModelPreview_4::/r2/robot_world::/r2/robot_world_visual_/r2/stanchion_MATERIAL_</name>
+            <uri>__default__</uri>
+          </script>
+          <ambient>0 1 0 1</ambient>
+          <diffuse>0 1 0 1</diffuse>
+          <specular>0 1 0 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+        <transparency>0</transparency>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+      <collision name='/r2/robot_world_collision_/r2/baseplate'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose>0 0 0 1.57 0 3.14</pose>
+        <geometry>
+          <mesh>
+            <uri>/home/marcio/.gazebo/models/robonaut/meshes/Stanchion_Baseplate.dae</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+              <fdir1>0 0 0</fdir1>
+              <slip1>0</slip1>
+              <slip2>0</slip2>
+            </ode>
+            <torsional>
+              <coefficient>1</coefficient>
+              <patch_radius>0</patch_radius>
+              <surface_radius>0</surface_radius>
+              <use_patch_radius>1</use_patch_radius>
+              <ode>
+                <slip>0</slip>
+              </ode>
+            </torsional>
+          </friction>
+          <bounce>
+            <restitution_coefficient>0</restitution_coefficient>
+            <threshold>1e+06</threshold>
+          </bounce>
+          <contact>
+            <collide_without_contact>0</collide_without_contact>
+            <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
+            <collide_bitmask>1</collide_bitmask>
+            <ode>
+              <soft_cfm>0</soft_cfm>
+              <soft_erp>0.2</soft_erp>
+              <kp>1e+13</kp>
+              <kd>1</kd>
+              <max_vel>0.01</max_vel>
+              <min_depth>0</min_depth>
+            </ode>
+            <bullet>
+              <split_impulse>1</split_impulse>
+              <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
+              <soft_cfm>0</soft_cfm>
+              <soft_erp>0.2</soft_erp>
+              <kp>1e+13</kp>
+              <kd>1</kd>
+            </bullet>
+          </contact>
+        </surface>
+      </collision>
+    </link>
+    <link name='/r2/left_wrist_pitch'>
+      <pose>0.994171 -0.206092 1.25906 1.85495 -1.56575 -0.575029</pose>
+      <inertial>
+        <pose>-0.004064 0 -0.000922 0 -0 0</pose>
+        <mass>0.116573</mass>
+        <inertia>
+          <ixx>5.765e-05</ixx>
+          <ixy>4.36e-11</ixy>
+          <ixz>1.75876e-06</ixz>
+          <iyy>1.69438e-05</iyy>
+          <iyz>5.4431e-08</iyz>
+          <izz>4.41886e-05</izz>
+        </inertia>
+      </inertial>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+    </link>
+    <link name='/r2/neck_lower_pitch'>
+      <pose>-4.4e-05 -0.011138 1.33421 1e-06 0.001593 -1.57478</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001</iyy>
+          <iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+      <visual name='/r2/neck_lower_pitch_visual'>
+        <pose>0.075 0 0 0 -0 1.57</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robonaut/meshes/Neck_Upper.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <shader type='pixel'>
+            <normal_map>__default__</normal_map>
+          </shader>
+          <script>
+            <name>ModelPreview_4::/r2/neck_lower_pitch::/r2/neck_lower_pitch_visual_MATERIAL_</name>
+          </script>
+          <diffuse>0 1 0 1</diffuse>
+          <ambient>0 0 0 1</ambient>
+          <specular>0 1 0 1</specular>
+          <emissive>0 1 0 1</emissive>
+        </material>
+        <transparency>0</transparency>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+      <collision name='/r2/neck_lower_pitch_collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose>0.075 0 0 0 -0 1.57</pose>
+        <geometry>
+          <mesh>
+            <uri>/home/marcio/.gazebo/models/robonaut/meshes/Neck_Upper.dae</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+              <fdir1>0 0 0</fdir1>
+              <slip1>0</slip1>
+              <slip2>0</slip2>
+            </ode>
+            <torsional>
+              <coefficient>1</coefficient>
+              <patch_radius>0</patch_radius>
+              <surface_radius>0</surface_radius>
+              <use_patch_radius>1</use_patch_radius>
+              <ode>
+                <slip>0</slip>
+              </ode>
+            </torsional>
+          </friction>
+          <bounce>
+            <restitution_coefficient>0</restitution_coefficient>
+            <threshold>1e+06</threshold>
+          </bounce>
+          <contact>
+            <collide_without_contact>0</collide_without_contact>
+            <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
+            <collide_bitmask>1</collide_bitmask>
+            <ode>
+              <soft_cfm>0</soft_cfm>
+              <soft_erp>0.2</soft_erp>
+              <kp>1e+13</kp>
+              <kd>1</kd>
+              <max_vel>0.01</max_vel>
+              <min_depth>0</min_depth>
+            </ode>
+            <bullet>
+              <split_impulse>1</split_impulse>
+              <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
+              <soft_cfm>0</soft_cfm>
+              <soft_erp>0.2</soft_erp>
+              <kp>1e+13</kp>
+              <kd>1</kd>
+            </bullet>
+          </contact>
+        </surface>
+      </collision>
+    </link>
+    <link name='/r2/neck_roll'>
+      <pose>-0.000248 -0.062221 1.51189 1.5708 0.001593 -1.57478</pose>
+      <inertial>
+        <pose>0.081499 0.101613 -0.011025 0 -0 0</pose>
+        <mass>1.13</mass>
+        <inertia>
+          <ixx>0.0270085</ixx>
+          <ixy>0</ixy>
+          <ixz>0.00047785</ixz>
+          <iyy>0.0262663</iyy>
+          <iyz>0.00047721</iyz>
+          <izz>0.0277254</izz>
+        </inertia>
+      </inertial>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <sensor name='asus/ir' type='depth'>
+        <update_rate>1</update_rate>
+        <camera name='__default__'>
+          <image>
+            <format>L8</format>
+            <width>640</width>
+            <height>480</height>
+          </image>
+          <horizontal_fov>0.9948</horizontal_fov>
+          <clip>
+            <near>0.01</near>
+            <far>5</far>
+          </clip>
+        </camera>
+        <pose>0.12 0.14 -0.015 1.5708 -0 0</pose>
+      </sensor>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <sensor name='asus/rgb' type='depth'>
+        <update_rate>1</update_rate>
+        <camera name='__default__'>
+          <image>
+            <format>R8G8B8</format>
+            <width>640</width>
+            <height>480</height>
+          </image>
+          <horizontal_fov>0.9948</horizontal_fov>
+          <clip>
+            <near>0.01</near>
+            <far>5</far>
+          </clip>
+        </camera>
+        <pose>0.12 0.14 -0.045 -1.57239 -0 0</pose>
+      </sensor>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <sensor name='/r2/neck/head/camera0' type='camera'>
+        <update_rate>10</update_rate>
+        <camera name='__default__'>
+          <image>
+            <width>1600</width>
+            <height>1200</height>
+            <format>R8G8B8</format>
+          </image>
+          <horizontal_fov>1.5707</horizontal_fov>
+          <clip>
+            <near>0.1</near>
+            <far>50</far>
+          </clip>
+        </camera>
+        <pose>0.084487 0.107466 -0.048892 -1.57159 0.002389 -2e-06</pose>
+      </sensor>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+      <sensor name='/r2/neck/head/camera1' type='camera'>
+        <update_rate>10</update_rate>
+        <camera name='__default__'>
+          <image>
+            <width>1600</width>
+            <height>1200</height>
+            <format>R8G8B8</format>
+          </image>
+          <horizontal_fov>1.5707</horizontal_fov>
+          <clip>
+            <near>0.1</near>
+            <far>50</far>
+          </clip>
+        </camera>
+        <pose>0.084643 0.107544 0.048848 -1.57159 0.002389 -2e-06</pose>
+      </sensor>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+      <visual name='/r2/neck_roll_visual'>
+        <pose>0 0.07 0 0 1.57 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robonaut/meshes/Head.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <shader type='pixel'>
+            <normal_map>__default__</normal_map>
+          </shader>
+          <script>
+            <name>ModelPreview_4::/r2/neck_roll::/r2/neck_roll_visual_MATERIAL_</name>
+          </script>
+          <ambient>0 1 0 1</ambient>
+          <diffuse>0 1 0 1</diffuse>
+          <specular>0 1 0 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+        <transparency>0</transparency>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+      <collision name='/r2/neck_roll_collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose>0 0.07 0 0 1.57 0</pose>
+        <geometry>
+          <mesh>
+            <uri>/home/marcio/.gazebo/models/robonaut/meshes/Head.dae</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+              <fdir1>0 0 0</fdir1>
+              <slip1>0</slip1>
+              <slip2>0</slip2>
+            </ode>
+            <torsional>
+              <coefficient>1</coefficient>
+              <patch_radius>0</patch_radius>
+              <surface_radius>0</surface_radius>
+              <use_patch_radius>1</use_patch_radius>
+              <ode>
+                <slip>0</slip>
+              </ode>
+            </torsional>
+          </friction>
+          <bounce>
+            <restitution_coefficient>0</restitution_coefficient>
+            <threshold>1e+06</threshold>
+          </bounce>
+          <contact>
+            <collide_without_contact>0</collide_without_contact>
+            <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
+            <collide_bitmask>1</collide_bitmask>
+            <ode>
+              <soft_cfm>0</soft_cfm>
+              <soft_erp>0.2</soft_erp>
+              <kp>1e+13</kp>
+              <kd>1</kd>
+              <max_vel>0.01</max_vel>
+              <min_depth>0</min_depth>
+            </ode>
+            <bullet>
+              <split_impulse>1</split_impulse>
+              <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
+              <soft_cfm>0</soft_cfm>
+              <soft_erp>0.2</soft_erp>
+              <kp>1e+13</kp>
+              <kd>1</kd>
+            </bullet>
+          </contact>
+        </surface>
+      </collision>
+    </link>
+    <link name='/r2/waist_center'>
+      <pose>0 0 0.72 -3.14159 0.001593 -1.57478</pose>
+      <inertial>
+        <pose>2.3e-05 0 -0.00027 0 -0 0</pose>
+        <mass>20.13</mass>
+        <inertia>
+          <ixx>2.00426</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>2.00716</iyy>
+          <iyz>0</iyz>
+          <izz>2.0042</izz>
+        </inertia>
+      </inertial>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+      <visual name='/r2/waist_center_visual_/r2/body_cover'>
+        <pose>0.02 0.05 -0.5625 -1.57 -0 -1.57</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robonaut/meshes/Body_Cover.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <shader type='pixel'>
+            <normal_map>__default__</normal_map>
+          </shader>
+          <script>
+            <name>ModelPreview_4::/r2/waist_center::/r2/waist_center_visual_/r2/body_cover_MATERIAL_</name>
+          </script>
+          <ambient>0 1 0 1</ambient>
+          <diffuse>0 1 0 1</diffuse>
+          <specular>0 1 0 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+        <transparency>0</transparency>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+      <collision name='/r2/waist_center_collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose>0.02 0.05 -0.5625 -1.57 -0 -1.57</pose>
+        <geometry>
+          <mesh>
+            <uri>/home/marcio/.gazebo/models/robonaut/meshes/Body.dae</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+              <fdir1>0 0 0</fdir1>
+              <slip1>0</slip1>
+              <slip2>0</slip2>
+            </ode>
+            <torsional>
+              <coefficient>1</coefficient>
+              <patch_radius>0</patch_radius>
+              <surface_radius>0</surface_radius>
+              <use_patch_radius>1</use_patch_radius>
+              <ode>
+                <slip>0</slip>
+              </ode>
+            </torsional>
+          </friction>
+          <bounce>
+            <restitution_coefficient>0</restitution_coefficient>
+            <threshold>1e+06</threshold>
+          </bounce>
+          <contact>
+            <collide_without_contact>0</collide_without_contact>
+            <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
+            <collide_bitmask>1</collide_bitmask>
+            <ode>
+              <soft_cfm>0</soft_cfm>
+              <soft_erp>0.2</soft_erp>
+              <kp>1e+13</kp>
+              <kd>1</kd>
+              <max_vel>0.01</max_vel>
+              <min_depth>0</min_depth>
+            </ode>
+            <bullet>
+              <split_impulse>1</split_impulse>
+              <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
+              <soft_cfm>0</soft_cfm>
+              <soft_erp>0.2</soft_erp>
+              <kp>1e+13</kp>
+              <kd>1</kd>
+            </bullet>
+          </contact>
+        </surface>
+      </collision>
+    </link>
+    <joint name='/r2/neck/joint2' type='revolute'>
+      <parent>/r2/neck_lower_pitch</parent>
+      <child>/r2/neck_roll</child>
+      <pose>0 0 0 0 -0 0</pose>
+      <axis>
+        <xyz>2e-06 4e-06 1</xyz>
+        <limit>
+          <lower>-0.7</lower>
+          <upper>0.175</upper>
+          <effort>10000</effort>
+          <velocity>1000</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>10</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+    <static>0</static>
+    <allow_auto_disable>1</allow_auto_disable>
+  </model>
+</sdf>
