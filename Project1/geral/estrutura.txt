@@ -14,6 +14,10 @@
     └──                              
     
 export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:/home/marcio/workspace/Project1/build
+
+export GAZEBO_MODEL_PATH=/home/marcio/workspace/Project1/model:$GAZEBO_MODEL_PATH
+    
+    
     
 Project Aspects
 Inside the Gazebo world you can identify:
