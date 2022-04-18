@@ -2,6 +2,11 @@
 
 ProcessImage::ProcessImage()
 {
+    ProcessImageMain();
+}
+
+void ProcessImage::ProcessImageMain()
+{
     // Define a client service capable of requesting services from command_robot
     client = n.serviceClient<ball_chaser::DriveToTarget>("/ball_chaser/command_robot");
 
@@ -43,11 +48,11 @@ void ProcessImage::process_image_callback(const sensor_msgs::Image img)
 
     // Then, identify if this pixel falls in the left, mid, or right side of the image
     if(pixel_falls % img.step < img.step / 3) // LEFT
-         drive_robot(0.5, 0.5);
+         drive_robot(0.3, 0.3);
     else if (pixel_falls % img.step > 2*img.step / 3) // RIGHT
-        drive_robot(0.5, -0.5);
+        drive_robot(0.3, -0.3);
     else
-        drive_robot(0.5, 0.0); // CENTER
+        drive_robot(0.3, 0.0); // CENTER
 
     // Request a stop when there's no white ball seen by the camera
     if (pixel_falls < 0) {

@@ -13,6 +13,7 @@ class ProcessImage {
         int pixel_falls = -1;
 
         void drive_robot(float lin_x, float ang_z);
+        void ProcessImageMain();
 
     public:
         ProcessImage();
